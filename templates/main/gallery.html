@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block extrahead %}
+<!--[if lte IE 6]>
+   <link rel="stylesheet" type="text/css" href="/static/css/style-ie6.css" />
+<![endif]-->
+<!--[if IE]>
+        <script src="/static/js/roundies.js"></script>
+        <script type="text/javascript"> 
+          DD_roundies.addRule('.round', '5px');
+        </script>
+<![endif]-->
+{% endblock %}
+{% block title %}Galerie photo - {{gallery.name}}{% endblock %}
+
+{% load firstlettercolor %}
+
+{% block script %}
+
+<script type="text/javascript">
+
+photos = new Array();
+{% for photo in photos %}
+{% if forloop.first %}var firstindex = {{photo.pk}};{% endif %}
+photos[{{photo.pk}}] = new Array('{{photo.get_url}}','{{photo.description|default_if_none:""}}');
+{% endfor %}
+
+function setPhotos(id)
+{
+    document.getElementById("daphoto").src=photos[id][0];
+    document.getElementById("desc").innerHTML=photos[id][1];
+}
+
+function setNext()
+{
+    
+    var f = false;
+    for (id in photos)
+    {
+        if (f)
+        {
+            setPhotos(id);
+            f = false;
+            break;
+        }
+        if (document.getElementById("daphoto").getAttribute('src') == photos[id][0])
+        {
+            f = true;
+        }
+    }
+    if (f === true)
+    {
+        setPhotos(firstindex);
+    }
+}
+
+</script>
+
+{% endblock %}
+
+{% block menugalerie %}<font  id="flg" color="#e15696">G</font>alerie{% endblock %}
+
+{% block menu %}
+<td colspan="15" class="menu">
+<div align="right">
+    <table><tr>
+	{% for gal in galleries %}<td {% if forloop.last%}style="text-align:right;"{% endif %}{% if forloop.first%}style="text-align:left;"{% endif %}><a onmouseover="chcol('{{gal.name}}', '#6eba59');" onmouseout="chcol('{{gal.name}}', 'prev');" href="/gallery/{{gal.dir_name}}">{% ifequal gallery.name gal.name %}{{gal.name|firstlettercolor:"#e15696"}}{%else%}{{gal.name|firstlettercolor:"black"}}{% endifequal %}</a></td>
+	{% endfor %}
+    </tr></table>
+</div>
+</td>
+{%endblock%}
+
+{% block content %}
+
+<table>
+<tr>
+<td class="round listphoto">
+<div style="height:570px;width:100%;overflow-y:auto;overflow-x:hidden;">
+ <table style="padding:5px;margin-top:10px;">
+
+    {% if photos %}
+	{% for photo in photos %}
+        {% cycle '<tr>' '' '' %}
+		<td valign="middle">
+            <img class="thumb" onmouseover='setPhotos({{photo.pk}});' title="{{photo.description|default_if_none:""}}" alt="voir : {{photo.description|default_if_none:""}}" src='{{photo.get_thumb}}' />
+        </td>
+		{% cycle '' '' '</tr>' as lasttr %}
+        {% if forloop.last %}{% ifequal '' lasttr %}</tr>{% endifequal %}{% endif %}
+	{% endfor %}
+    {% endif %}
+
+    {% if films %}
+    {% for film in films %}
+        {% cycle '<tr>' '' '' %}
+        <td valign="middle">
+            <a href="{{film.get_url}}" ><img class="thumb" title="télécharger le fichier" alt="télécharger" src='{{film.get_thumb}}' /></a>
+        </td>
+		{% cycle '' '' '</tr>' as lasttr %}
+        {% if forloop.last %}{% ifequal '' lasttr %}</tr>{% endifequal %}{% endif %}
+    {% endfor %}
+    {% endif %}
+
+ </table>
+</div>
+<div style="text-align:center;width:100%" id="desc">{{first.description|default_if_none:""}}</div>
+</td>
+<td style="vertical-align:middle;height:605px;" width="700">
+	<div id="bigphoto"  align="center">
+		<img oncontextmenu="return false" onclick='setNext();' id='daphoto' alt="" title="Suivante" src="{{first.get_url}}"/>
+	</div>
+</td>
+</tr>
+</table>
+{% endblock %}

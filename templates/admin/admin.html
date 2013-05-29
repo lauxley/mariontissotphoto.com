@@ -1,0 +1,52 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Admin{% endblock %}
+{% block content %}
+
+<table width="100%">
+<tr>
+<td>
+<ul>
+{% for gal in gallery %}
+
+<li>{{ gal }}
+	<ul>
+{% for photo in gal.photos %}
+	<li>{{photo}}</li>
+{%endfor%}
+{% for child in gal.childs %}
+	<li>{{ child }}</li>
+	<ul>
+	{% for photo in child.photos %}
+		<li>{{photo}}</li>
+	{% endfor %}
+	</ul>
+{% endfor %}
+	</ul>
+</li>
+{%endfor%}
+</ul>
+</td>
+<td>
+<fieldset>
+<form method="post" enctype='multipart/form-data'>
+<table>
+{{ formgallery.as_table}}
+<tr><td rowspan="2"><input type="submit" value="Creer"></td></tr>
+</table>
+<input type="hidden" name="newgallery"/>
+</form>
+</fieldset>
+<fieldset>
+<form method="post" enctype='multipart/form-data'>
+<table>
+{{ formphoto.as_table}}
+<tr><td rowspan="2"><input type="submit" value="Envoyer"></td></tr>
+</table>
+<input type="hidden" name="newphoto"/>
+</form>
+</fieldset>
+</td>
+</tr>
+</table>
+{% endblock %}

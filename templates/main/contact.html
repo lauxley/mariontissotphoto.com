@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}Contact{% endblock %}
+{% block menucontact %}<font  id="flc" color="#e15696">C</font>ontact{% endblock %}
+{% block extrahead %}
+<style type="text/css">
+.form th,.form td{
+    text-align: left;
+    width:200px;
+}
+
+</style>
+
+{% endblock %}
+{% block content %}
+<table width="100%" style="padding-left:20px;">
+<tr>
+<td style="text-align:left;vertical-align:middle;">
+<div style="margin-top:140px;height:440px; vertical-align:middle;">
+<b>Marion Tissot Photographe</b> <span style="color:grey;">- Montréal - (514) 658-1576</span>
+<br/>
+<br/>Pour toute question ou demande de tarif, n'h&eacute;sitez pas à me laisser un message :
+<br/>
+<br/>
+<form method="post" action="">
+<table class="form">
+<tr><td>Votre email</td><td>{{form.email}}</td><td>{{form.email.errors}}</td></tr>
+<tr><td>Message</td><td>{{form.msg}}</td><td>{{form.msg.errors}}</td></tr>
+<tr><td colspan="2" style="text-align:center;"><input type="submit" value="Envoyer"/></td></tr>
+</table>
+</form>
+</div>
+</td>
+</tr>
+<tr style="15px;">
+<td style="color:grey;font-size:small;" colspan="3">
+<br/>site créé par <a href="http://www.revolunet.com">Revolunet</a>, avec la technologie <a href="http://www.djangoproject.com">Django.</a>
+</td>
+</tr>
+</table>
+
+{% endblock %}

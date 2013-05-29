@@ -1,0 +1,62 @@
+body { 
+	behavior:url(csshover2.htc);
+}
+
+ul, ol {
+  position: relative; /* Keeps IE6 from cutting pulled/pushed images */
+}
+
+/* Fixes incorrect styling of legend in IE6 fieldsets. */
+legend { margin-bottom:1.4em; }
+
+/* Fixes incorrect placement of numbers in ol's in IE6/7 */
+ol { margin-left:2em; }
+
+a {
+	cursor:pointer;
+}
+
+#logo {
+	background:transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="/static/images/logo.png", sizingMethod="crop");
+}
+
+.lang-fr .block-send h2 {
+	background:transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/icon-send-fr.png", sizingMethod="crop");
+}
+
+.lang-fr .block-follow h2 {
+	background:transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/icon-follow-fr.png", sizingMethod="crop");
+}
+
+.lang-fr .block-automatize h2 {
+	background:transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/icon-automatize-fr.png", sizingMethod="crop");
+}
+
+.lang-en .block-send h2 {
+	background:transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/icon-send-en.png", sizingMethod="crop");
+}
+
+.lang-en .block-follow h2 {
+	background:transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/icon-follow-en.png", sizingMethod="crop");
+}
+
+.lang-en .block-automatize h2 {
+	background:transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/icon-automatize-en.png", sizingMethod="crop");
+}
+
+.lang-fr a.signup {
+	background:transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/icon-signup-fr.png", sizingMethod="crop");
+}
+
+.lang-en a.signup {
+	background:transparent;
+	filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="images/icon-signup-en.png", sizingMethod="crop");
+}

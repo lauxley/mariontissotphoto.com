@@ -1,0 +1,4 @@
+<p>{{obj.description|safe|linebreaksbr}}</p>
+{% for photo in obj.photos.all %}
+    <p><img oncontextmenu="return false" alt="" src="{{photo.get_url}}"/><p/>
+{% endfor %}

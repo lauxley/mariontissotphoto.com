@@ -1,0 +1,101 @@
+
+body{
+	background-color: white;
+	font-family: Verdana, Helvetica;
+}
+
+.maingrid{
+}
+
+.maingrid td{
+}
+
+img{ border: 0px; }
+
+font {
+    text-transform:uppercase;
+}
+
+#mariontissotphoto{
+	border: 0px;
+	background-color: white;
+	background-position: center;
+	background-image: url("/static/images/fond-blanc-bordure-fine.jpg");
+	background-repeat: no-repeat;
+    margin:0px;
+	width: 1100px;
+	height: 800px;
+}
+
+#capsule{
+    padding: 40px;
+    padding-top:20px;
+    padding-bottom:20px;
+    width: 1020px;
+	height: 760px;
+}
+
+#banhaut{
+	margin: 5px;
+    margin-top:0px;
+	padding: 5px;
+}
+
+#menu{
+	width: 100%;
+}
+
+#menu a{
+	color: black;
+	font-size: 15pt;
+	text-decoration: none;
+}
+
+
+.menu{
+	color: black;
+    text-align: right;
+    vertical-align: bottom;
+    padding:5px;
+	text-decoration: none;
+}
+
+.menu td{
+    text-align:right;
+    vertical-align: bottom;
+    width: 90px;
+    margin:0px;
+	padding:5px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+
+#logo{
+	margin-bottom: 10px;
+	margin-right: 20px;
+}
+#logo a{
+	color: black;
+	font-size: 22pt;
+	font-weight: bold;
+	text-align: left;
+	text-decoration: none;
+}
+
+.block{
+	padding: 10px;
+}
+
+span {
+	margin: 5px;
+}
+
+.listphoto{
+	padding:10px;
+	vertical-align:top;
+}
+
+#daphoto{
+    border: 2px solid grey;
+}

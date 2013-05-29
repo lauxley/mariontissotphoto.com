@@ -1,0 +1,3 @@
+This is an old site (may 2009) that died of natural death ...
+The licence is : for your own sake, don't use it, don't look at it, don't mention it,
+it's probably poorly coded, and only here for future references (or not).

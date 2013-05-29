@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<link rel="stylesheet" href="/static/css/style.css" />
+	<title>Marion Tissot - Erreur 500!</title>
+    
+<script language="javascript">
+
+function chcol(el, color)
+{
+    _el = document.getElementById(el);
+    if (_el)
+    {
+        //alert(_el.color);
+        _tmp = _el.color;
+        if (color == 'prev')
+            { _el.color = chcol.prevcolor; }
+        else
+            { _el.color = color; }
+        chcol.prevcolor = _tmp
+    }
+}
+
+</script>
+
+</head>
+<body bgcolor="grey">
+	<table class="maingrid" width="100%" height="100%">
+		<tr>
+			<td style="vertical-align:middle" align="center">
+				<div id="mariontissotphoto">
+                    <div id="capsule">
+					<div id="banhaut">
+						<table id="menu">
+						<tr id="mainmenu">
+						<td width="320" id="logo" align="left"><a href="/"><img src="/static/images/mariontissot.jpg" alt="Marion Tissot Photo" /></a></td>
+                        <td class="menu">
+                            <div align="right">
+                            <table>
+								<tr>
+                                <td><a href="/" onmouseover="chcol('fla', '#6eba59');" onmouseout="chcol('fla', 'prev');">{% block menuaccueil %}<font id="fla" color="#000000">A</font>ccueil{% endblock %}</a></td>
+								<td><a href="/gallery" onmouseover="chcol('flg', '#6eba59');" onmouseout="chcol('flg', 'prev');">{% block menugalerie %}<font id="flg" color="#000000">G</font>alerie{% endblock %}</a></td>
+								<td><a href="/blog" onmouseover="chcol('flb', '#6eba59');" onmouseout="chcol('flb', 'prev');">{% block menublog %}<font id="flb" color="#000000">B</font>log{% endblock %}</a></td>
+								
+                                <!--<td><a href="/bio" onmouseover="chcol('flb', '#6eba59');" onmouseout="chcol('flb', 'prev');">{% block menubio %}<font id="flb" color="#000000">B</font>io{% endblock %}</a></td>-->
+								<td><a href="/contact" onmouseover="chcol('flc', '#6eba59');" onmouseout="chcol('flc', 'prev');">{% block menucontact %}<font id="flc" color="#000000">C</font>ontact{% endblock %}</a></td></tr>
+                            </table></div>
+                        </td>
+						</tr>
+                        <tr>
+                        <td><img src="/static/images/portraits.jpg" alt="Portraits" /></td>
+                        </tr>
+						</table>
+					</div>
+				<div class="block" style="margin:0px;">
+                    Une erreur est sur survenue ! les administrateurs en ont étés informé.
+				</div>
+				</div>
+                </div>
+			</td>
+		</tr>
+        <tr>
+        <td style="vertical-align:top;text-align:center;font-size:smaller;color:grey;">
+        Toutes les photos sont © Marion Tissot - Tous droits réservés
+        </td>
+        </tr>
+	</table>
+
+
+</body>
+</html>

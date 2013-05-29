@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block menublog %}<font  id="flb" color="#e15696">B</font>log{% endblock %}
+{% block title %}Photo Blog{% endblock %}
+
+{% load comments %}
+
+{% block extrahead %}
+{% endblock %}
+
+{% block content %}
+
+<table width="100%">
+<tr>
+<td class="round listphoto">
+
+ <table width="100%">
+    <tr>
+    <td colspan="2">
+        <form action="/blog/search" method="post">
+            <a href="/feeds/blog" style="vertical-align:middle"><img alt="Flux Rss" title="Flux Rss" src="/static/images/feed.png" /></a> &nbsp;
+            <input name="search" />
+            <input type="submit" value="chercher" name="ok" />
+        </form>
+    </td>
+    </tr>
+    <tr style="height:100px;">
+    <td>
+        <div style="width:120px;text-align:left;vertical-align:top;overflow-x:hidden;">
+        {% if blog.previous %}<a style="font-size:smaller;" href="{{blog.previous.get_url}}"><img alt="Pr&eacute;c&eacute;dent" src="/static/images/gauche.jpg" /><br/>{{blog.previous.date|date:"d M Y"}}<br/>{{blog.previous.title}}</a>{% endif %}
+        </div>
+    </td>
+    <td>
+        <div style="width:140px;text-align:right;vertical-align:top;overflow-x:hidden;">
+        {% if blog.next %}<a style="font-size:smaller;" href="{{blog.next.get_url}}"><img alt="Suivant" src="/static/images/droite.jpg" /><br/>{{blog.next.date|date:"d M Y"}}<br/>{{blog.next.title}}</a>{% endif %}
+        </div>
+    </td>
+    </tr>
+    <tr>
+    
+    <td colspan="2" id="desc">
+    <hr class="deschr"/>
+    <div class="desc" style="height:352px;width:100%;overflow-y:auto;">
+        <p style="font-size:smaller">{{blog.description|safe|linebreaksbr}}</p>
+    </div>
+    </td>
+    
+    </tr>
+    <tr style="height:70px"><td colspan="2" style="text-align:left;">
+        {% if tagz %}
+        <hr class="deschr"/>
+        tags: {% for tag in tagz %}
+        {% if not forloop.first %}, {% endif %}
+        <a href="/blog/tag/{{tag.name}}" >{{tag.name}}</a>
+        {% endfor %}
+        {% endif %}
+    </td>
+    </tr>
+
+</table>
+
+</td>
+<td style="text-align:left;padding-left:10px;">
+    {% get_comment_count for blog as comment_count %}
+    <b>{{blog.title}} </b><br/>
+    <a onclick="window.open('/blog/comments/{{blog.slug}}','_blank', 'width=410px,height=500px,resizable=yes,toolbar=no,scrollbars=yes');" style="float:right;font-size:smaller;color:grey;cursor:pointer">({{comment_count}} commentaire{{comment_count|pluralize}})</a>
+    <span style="float:left;color:grey;font-size:small;">{{blog.date|date:"d M Y"}}</span>
+    <br/><div style="height:540px;margin-top:10px;width:650px;text-align:center;overflow-y:auto;overflow-x:hidden">
+    {% for photo in photoz %}
+        <img oncontextmenu="return false" alt="" style="max-height:500px;max-width:600px;" class="photos" src="{{photo.get_url}}"/><br/><br/>
+    {% endfor %}
+    </div>
+</td>
+</tr>
+</table>
+
+    
+
+{% endblock %}

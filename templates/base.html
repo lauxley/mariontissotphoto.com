@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="frFR">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" href="/static/css/style.css" />
+	<title>{% block title %}Acceuil{% endblock %} - Marion Tissot Portraits</title>
+	{% block extrahead %}{% endblock %}
+	{% block script %}{% endblock %}
+    
+<script type="text/javascript">
+
+function chcol(el, color)
+{
+    _el = document.getElementById(el);
+    if (_el)
+    {
+        //alert(_el.color);
+        _tmp = _el.color;
+        if (color == 'prev')
+            { _el.color = chcol.prevcolor; }
+        else
+            { _el.color = color; }
+        chcol.prevcolor = _tmp
+    }
+}
+
+</script>
+
+</head>
+<body>
+<table class="maingrid">
+    <tr>
+        <td>
+            <div id="mariontissotphoto">
+                <div id="capsule">
+                    <div id="banhaut">
+                        <table id="menu">
+                            <tr id="mainmenu">
+                                <td width="320" id="logo"><a href="/"><img src="/static/images/logomt.png" alt="Marion Tissot Photo" /></a></td>
+                                <td class="menu">
+                                    <div align="right">
+                                        <table>
+                                        <tr>
+                                        <td style="text-align:left;"><a href="/" onmouseover="chcol('fla', '#6eba59');" onmouseout="chcol('fla', 'prev');">{% block menuaccueil %}<font id="fla" color="#000000">A</font>ccueil{% endblock %}</a></td>
+                                        <td><a href="/gallery" onmouseover="chcol('flg', '#6eba59');" onmouseout="chcol('flg', 'prev');">{% block menugalerie %}<font id="flg" color="#000000">G</font>alerie{% endblock %}</a></td>
+                                        <td><a href="/blog" onmouseover="chcol('flb', '#6eba59');" onmouseout="chcol('flb', 'prev');">{% block menublog %}<font id="flb" color="#000000">B</font>log{% endblock %}</a></td>
+
+                                        <!--<td><a href="/bio" onmouseover="chcol('flb', '#6eba59');" onmouseout="chcol('flb', 'prev');">{% block menubio %}<font id="flb" color="#000000">B</font>io{% endblock %}</a></td>-->
+                                        <td style="text-align:right;"><a href="/contact" onmouseover="chcol('flc', '#6eba59');" onmouseout="chcol('flc', 'prev');">{% block menucontact %}<font id="flc" color="#000000">C</font>ontact{% endblock %}</a></td></tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="/static/images/logophotographe.png" alt="Portraits" /></td>
+                                {% block menu %}{%endblock%}
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="block">
+                        {% block content %}{% endblock %}
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                Toutes les photos sont © Marion Tissot - Tous droits réservés
+            </div>
+        </td>
+    </tr>
+</table>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-10302011-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+</body>
+</html>

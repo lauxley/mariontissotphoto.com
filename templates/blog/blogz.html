@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% block title %}Recherche dans le blog{% endblock %}
+
+{% block script %}
+<style>
+
+.listphoto{
+    width:300px;
+	background-color:#CCCCCC;
+	overflow-y: auto;
+    vertical-align:top !important;
+}
+
+.listphoto td{
+    text-align: center;
+    padding: 10px;
+}
+
+.round {
+    -moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	-khtml-border-radius:8px;
+	border-radius:8px;
+}
+
+.thumb{
+    border: 1px solid grey;
+}
+
+#imgBox { width:80px; height:80px; margin:0;padding:0 }
+
+</style>
+{% endblock %}
+{% block content %}
+<table width="100%">
+<tr>
+<td class="round listphoto">
+ <table width="100%">
+    </tr>
+    <tr>
+    <td colspan="2">
+        <form action="/blog/search" method="POST">
+            <a href="/feeds/blog" style="vertical-align:middle"><img src="/static/images/feed.png"></a> &nbsp;
+            <input name="search">
+            <input type="submit" value="chercher" name="ok"/>
+        </form>
+    </td>
+    </tr>
+    <tr height="125"><td colspan="2" style="text-align:left;">
+        {% if tagz %}
+        tags: {% for tag in tagz %}
+        {% if not forloop.first %}, {% endif %}
+        <a href="/blog/tag/{{tag.name}}" >{{tag.name}}</a>
+        {% endfor %}
+        {% endif %}
+    </li></td>
+    </tr>
+</table>
+</td>
+<td style="padding-left:10px;">
+    <div style="height:600px;width:100%;text-align:center;overflow-x:hidden;">
+        {% if blogz %}
+        {% for blog in blogz %}
+        <a href="{{blog.get_url}}">
+        {% for photo in blog.photos.all|slice:":3" %}
+        <img height="100" src='{{photo.get_url}}' />
+        {% endfor %}
+        <br>
+        {{blog.date|date:"d M Y"}} - <b>{{blog.title}}</b>
+        </a>
+        <hr>
+        {% endfor %}
+        {% else %}
+        Aucun post trouvé avec ces paramètres de recherche !
+        {% endif %}
+    </div>
+</td>
+</tr>
+</table>
+
+
+
+{% endblock %}

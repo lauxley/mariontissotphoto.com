@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Accueil{% endblock %}
+{% block menuaccueil %}<font id="fla" color="#e15696">A</font>ccueil{% endblock %}
+{% block extrahead %}
+{% endblock %}
+
+{% block content %}
+
+<table width="100%"  style="height:600px;">
+<tr style='height:600px'>
+{% for p in photos %}
+<td align="center" style="vertical-align:middle;">
+    <a href="{{p.get_gallery.get_absolute_url}}">
+    <img height="400" oncontextmenu="return false" alt="{{p.get_gallery.name}}" title="{{p.get_gallery.name}}" style="border:1px solid grey;" src="{{p.get_url}}" />
+    </a>
+</td>
+{% endfor %}
+</tr>
+</table>
+
+{% endblock %}

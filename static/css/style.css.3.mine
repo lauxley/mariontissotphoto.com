@@ -1,0 +1,132 @@
+
+body{
+	background-color: #CCCCCC;
+	font-family: Verdana, Helvetica;
+}
+
+.maingrid{
+}
+
+.maingrid td{
+}
+
+img{ border: 0px; }
+
+font {
+    text-transform:uppercase;
+}
+
+#mariontissotphoto{
+	border: 0px;
+	background-color: #CCCCCC;
+	background-position: center;
+	background-image: url("/static/images/fond-blanc.jpg");
+	background-repeat: no-repeat;
+    margin:0px;
+	width: 1100px;
+	height: 800px;
+}
+
+#capsule{
+    padding: 40px;
+    padding-top:20px;
+    padding-bottom:20px;
+    width: 1020px;
+	height: 760px;
+}
+
+#banhaut{
+	margin: 5px;
+    margin-top:0px;
+	padding: 5px;
+}
+
+#menu{
+	width: 100%;
+<<<<<<< .mine
+<<<<<<< .mine
+	#font-weight: bold;
+=======
+>>>>>>> .r15
+=======
+    vertical-align: bottom;
+>>>>>>> .r16
+}
+
+#menu div{
+    display: inline;
+}
+
+#menu a{
+	color: black;
+	font-size: 15pt;
+<<<<<<< .mine
+	#font-weight: bold;
+=======
+>>>>>>> .r15
+	text-decoration: none;
+}
+
+
+.menu{
+	color: black;
+    text-align: right;
+    padding:0px;
+	text-decoration: none;
+}
+
+.menu div{
+	display: inline;
+    margin:0px;
+	padding:5px;
+	padding-left:15px;
+	padding-right:15px;
+}
+
+.menu .selected{
+	background-position: 0px 5px;
+	background-repeat: no-repeat;
+	background-image:url("/static/images/rondorange_pt.gif");
+	}
+
+.menu .hover{
+	background-position: 0px 5px;
+	background-repeat: no-repeat;
+	background-image:url("/static/images/rondgris_pt.gif");
+}
+
+.menu  a{
+	color: black;
+	font-size: 10pt;
+	/*font-weight: bold;*/
+	text-decoration: none;
+}
+
+#logo{
+	margin-bottom: 10px;
+	margin-right: 20px;
+}
+#logo a{
+	color: black;
+	font-size: 22pt;
+	font-weight: bold;
+	text-align: left;
+	text-decoration: none;
+}
+
+.block{
+	padding: 10px;
+}
+
+span {
+	margin: 5px;
+}
+
+.listphoto{
+	padding:10px;
+	vertical-align:top;
+}
+
+#daphoto{
+    border: 2px solid grey;
+}

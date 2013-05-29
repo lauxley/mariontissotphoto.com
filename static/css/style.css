@@ -1,0 +1,281 @@
+/* -------------------------------------------------------------- 
+  
+   reset.css
+   * Resets default browser CSS.
+   
+   Based on work by Eric Meyer:
+   * meyerweb.com/eric/thoughts/2007/05/01/reset-reloaded/
+   
+-------------------------------------------------------------- */
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, code,
+del, dfn, em, img, q, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-weight: inherit;
+	font-style: inherit;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+
+td {text-align: left;}
+
+body { line-height: 1.5; background: #fff; margin:0; } /* text-shadow:rgba(0,0,0,0.01) 0 0 0; */
+
+/* Tables still need 'cellspacing="0"' in the markup. */
+table { border-collapse: separate; border-spacing: 0; }
+caption, th { text-align: left; font-weight:400; }
+
+/* Remove possible quote marks (") from <q>, <blockquote>. */
+blockquote:before, blockquote:after, q:before, q:after { content: ""; }
+blockquote, q { quotes: "" ""; }
+
+a img { border: none; }
+
+html {
+  padding:0;
+  margin:0;
+}
+
+/*-----------------------------------------------------------------------*/
+
+html, body{
+	background-color: white;
+	font-family: Verdana, Helvetica;
+    margin:0;
+    padding:0;
+
+    height:100%;
+}
+
+font {
+    text-transform:uppercase;
+}
+
+#mariontissotphoto{
+	border: 0px;
+	background-color: white;
+	background-position: center;
+	background-image: url("/static/images/fond-blanc-bordure-fine.jpg");
+	background-repeat: no-repeat;
+	width: 1100px;
+	height: 780px;
+    margin:auto;
+}
+
+.maingrid {
+    height:100%;
+    width:100%;
+}
+
+.maingrid td{
+    text-align:center;
+    vertical-align: middle;
+    height:100%;
+}
+
+#capsule{
+    padding: 40px;
+    padding-top:20px;
+    padding-bottom:10px;
+    width: 1020px;
+	height: 760px;
+}
+
+#banhaut{
+	margin: 5px;
+    margin-top:0px;
+	padding: 5px;
+}
+
+#menu{
+	width: 100%;
+    vertical-align: bottom;
+}
+
+#menu a{
+    font-weight: normal;
+	color: black;
+	font-size: 15pt;
+    text-decoration: none;
+}
+
+
+.menu{
+    font-weight: normal;
+	color: black;
+    text-align: right;
+    vertical-align: bottom;
+    padding:5px;
+}
+
+.menu a{
+	text-decoration: none;
+}
+
+.menu table{
+    width:550px;
+}
+
+.menu td{
+    text-align:center;
+    vertical-align: bottom;
+    margin:0px;
+	padding:5px;
+	padding-left:10px;
+	padding-right:10px;
+}
+
+#logo{
+	margin-bottom: 10px;
+	margin-right: 20px;
+}
+#logo a{
+	color: black;
+	font-size: 22pt;
+	font-weight: bold;
+	text-align: left;
+}
+
+a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover{
+   text-decoration: underline;
+}
+
+a:hover img {
+		text-decoration: none; }
+
+.block{
+	padding: 10px;
+    margin:0px;
+}
+
+span {
+	margin: 5px;
+}
+
+.listphoto{
+	padding:0px;
+	vertical-align:top;
+}
+
+/* fr : Voila le truc */
+/* en : Here is the trick*/
+
+/* fr : Ce DIV agit egalement en tant que conteneur */
+/* en : This DIV also acts as a container*/
+.upperleft{
+	margin-left : auto;
+	margin-right : auto;
+
+	background-color : #CCCCCC;
+	background-image : url('/static/images/h-g.gif');
+	background-repeat : no-repeat;
+	background-position : top left;
+}
+
+.upperright{
+	background-image : url('/static/images/h-d.gif');
+	background-repeat : no-repeat;
+	background-position : top right;
+}
+
+.lowerleft{
+	background-image : url('/static/images/b-g.gif');
+	background-repeat : no-repeat;
+	background-position : bottom left;
+}
+
+.lowerright{
+	background-image : url('/static/images/b-d.gif');
+	background-repeat : no-repeat;
+	background-position : bottom right;
+}
+
+.upperleftwhite{
+	margin-left : auto;
+	margin-right : auto;
+
+	/*background-color : #CCCCCC;*/
+	background-image : url('/static/images/h-g.gif');
+	background-repeat : no-repeat;
+	background-position : top left;
+}
+
+.upperrightwhite{
+	background-image : url('/static/images/h-d.gif');
+	background-repeat : no-repeat;
+	background-position : top right;
+}
+
+.lowerleftwhite{
+	background-image : url('/static/images/b-g.gif');
+	background-repeat : no-repeat;
+	background-position : bottom left;
+}
+
+.lowerrightwhite{
+	background-image : url('/static/images/b-d.gif');
+	background-repeat : no-repeat;
+	background-position : bottom right;
+}
+
+#daphoto{
+    border: 2px solid #888888;
+    cursor: pointer;
+}
+
+.copyright{
+     vertical-align:top;
+     text-align:center;
+     font-size:smaller;
+     color:#888888;
+}
+
+.listphoto{
+    width:300px;
+	background-color:#CCCCCC;
+    /*overflow-y: auto;*/
+    vertical-align:top !important;
+}
+
+.listphoto td{
+    text-align: center;
+    padding: 5px;
+}
+
+.round {
+-moz-border-radius:8px;
+-webkit-border-radius:8px;
+-khtml-border-radius:8px;
+border-radius:8px;
+}
+
+.thumb{
+    border: 1px solid #888888;
+}
+
+.photos{
+    border: 1px solid #888888;
+}
+
+#imgBox { width:80px; height:80px; margin:0;padding:0 }
+
+.desc{
+    text-align:left;
+}
+
+.deschr{
+    width:20%;
+}
